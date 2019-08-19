@@ -1,6 +1,6 @@
-#include "FrameBuffer.h"
-#include "GameHeader.h"
-#include "Engine.h"
+#include "FrameBuffer.hpp"
+#include "GameHeader.hpp"
+#include "Engine.hpp"
 #include <iostream>
 
 FrameBuffer::FrameBuffer() {

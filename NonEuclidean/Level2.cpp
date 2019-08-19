@@ -1,5 +1,5 @@
-#include "Level2.h"
-#include "House.h"
+#include "Level2.hpp"
+#include "House.hpp"
 
 void Level2::Load(PObjectVec& objs, PPortalVec& portals, Player& player) {
   std::shared_ptr<House> house1(new House("three_room.bmp"));

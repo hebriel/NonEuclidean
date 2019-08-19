@@ -1,8 +1,8 @@
-#include "Level3.h"
-#include "Pillar.h"
-#include "Ground.h"
-#include "Statue.h"
-#include "PillarRoom.h"
+#include "Level3.hpp"
+#include "Pillar.hpp"
+#include "Ground.hpp"
+#include "Statue.hpp"
+#include "PillarRoom.hpp"
 
 void Level3::Load(PObjectVec& objs, PPortalVec& portals, Player& player) {
   //Room 1

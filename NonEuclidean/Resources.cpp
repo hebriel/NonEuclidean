@@ -1,4 +1,4 @@
-#include "Resources.h"
+#include "Resources.hpp"
 #include <unordered_map>
 
 std::shared_ptr<Mesh> AquireMesh(const char* name) {

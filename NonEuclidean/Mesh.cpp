@@ -1,5 +1,5 @@
-#include "Mesh.h"
-#include "Vector.h"
+#include "Mesh.hpp"
+#include "Vector.hpp"
 #include <fstream>
 #include <sstream>
 #include <string>

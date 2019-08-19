@@ -1,7 +1,7 @@
-#include "Object.h"
-#include "Mesh.h"
-#include "Shader.h"
-#include "Texture.h"
+#include "Object.hpp"
+#include "Mesh.hpp"
+#include "Shader.hpp"
+#include "Texture.hpp"
 
 Object::Object() :
   pos(0.0f),

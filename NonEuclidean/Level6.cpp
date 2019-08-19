@@ -1,5 +1,5 @@
-#include "Level6.h"
-#include "Floorplan.h"
+#include "Level6.hpp"
+#include "Floorplan.hpp"
 
 void Level6::Load(PObjectVec& objs, PPortalVec& portals, Player& player) {
   std::shared_ptr<Floorplan> floorplan(new Floorplan);

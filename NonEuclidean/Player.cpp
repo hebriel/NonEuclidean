@@ -1,13 +1,12 @@
-#include "Player.h"
-#include "Input.h"
-#include "GameHeader.h"
-#include <Windows.h>
+#include "Player.hpp"
+#include "Input.hpp"
+#include "GameHeader.hpp"
 #include <iostream>
 
 Player::Player() {
   Reset();
-  hitSpheres.push_back(Sphere(Vector3(0, 0, 0), GH_PLAYER_RADIUS));
-  hitSpheres.push_back(Sphere(Vector3(0, GH_PLAYER_RADIUS - GH_PLAYER_HEIGHT, 0), GH_PLAYER_RADIUS));
+  hitSpheres.emplace_back(Vector3(0, 0, 0), GH_PLAYER_RADIUS);
+  hitSpheres.emplace_back(Vector3(0, GH_PLAYER_RADIUS - GH_PLAYER_HEIGHT, 0), GH_PLAYER_RADIUS);
 }
 
 void Player::Reset() {
@@ -44,16 +43,16 @@ void Player::Update() {
   //Movement
   float moveF = 0.0f;
   float moveL = 0.0f;
-  if (GH_INPUT->key['W']) {
+  if (GH_INPUT->key_press[SDL_SCANCODE_W]) {
     moveF += 1.0f;
   }
-  if (GH_INPUT->key['S']) {
+  if (GH_INPUT->key_press[SDL_SCANCODE_S]) {
     moveF -= 1.0f;
   }
-  if (GH_INPUT->key['A']) {
+  if (GH_INPUT->key_press[SDL_SCANCODE_A]) {
     moveL += 1.0f;
   }
-  if (GH_INPUT->key['D']) {
+  if (GH_INPUT->key_press[SDL_SCANCODE_D]) {
     moveL -= 1.0f;
   }
   Move(moveF, moveL);

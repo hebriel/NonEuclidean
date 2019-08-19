@@ -1,6 +1,7 @@
-#include "Shader.h"
+#include "Shader.hpp"
 #include <fstream>
 #include <sstream>
+#include <iostream>
 
 Shader::Shader(const char* name) {
   //Get the file paths
@@ -36,8 +37,11 @@ Shader::Shader(const char* name) {
     glGetProgramInfoLog(progId, logLength, &logLength, log.data());
 
     std::ofstream fout(std::string(vert) + ".link.log");
+	  std::cerr << "Linker : " << vert << " ";
+	  for (int i = 0; log[i]; ++i)
+		  std::cerr << log[i];
+	  std::cerr << std::endl;
     fout.write(log.data(), logLength);
-
     progId = 0;
     return;
   }
@@ -64,6 +68,7 @@ GLuint Shader::LoadShader(const char* fname, GLenum type) {
   std::ifstream fin(fname);
   std::stringstream buff;
   buff << fin.rdbuf();
+  std::cout << fin.rdbuf() << std::endl;
   const std::string str = buff.str();
   const char* source = str.c_str();
 
@@ -84,6 +89,10 @@ GLuint Shader::LoadShader(const char* fname, GLenum type) {
     glGetShaderInfoLog(id, logLength, &logLength, log.data());
 
     std::ofstream fout(std::string(fname) + ".log");
+	  std::cerr << "Compiler : " << fname << " ";
+    for (int i = 0; log[i]; ++i)
+    	std::cerr << log[i];
+    std::cerr << std::endl;
     fout.write(log.data(), logLength);
     return 0;
   }
